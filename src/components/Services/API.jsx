@@ -13,13 +13,3 @@ import axios from 'axios';
 //   };
 
 
-// получить коллекцию для главной страницы /trending/get-trending 
-
-// export const getTrending = async () => {
-//     try {
-//         const response = await fetch ()
-//     }catch (error) {
-
-//     }
-     
-// }
