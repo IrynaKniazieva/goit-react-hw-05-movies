@@ -4,6 +4,7 @@ import { Home } from "../../../src/pages/Home/Home";
 import { Movies } from "../../../src/pages/Movies/Movies";
 import { NotFound } from "../../../src/pages/NotFound/NotFound";
 import { Container, Header, Logo, Link } from "../App/App.styled";
+// import { MoviesDetails } from "../../pages/MoviesDetails/MoviesDetails"
 
 
 
@@ -25,6 +26,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="*" element={<NotFound />} />
+        {/* <Route path="/movies/:id" element={<MoviesDetails />} /> */}
       </Routes>
     </Container>
   

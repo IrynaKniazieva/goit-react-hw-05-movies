@@ -1,13 +1,27 @@
+
+import { MoviesList } from "components/MoviesList/MoviesList";
+import { fetchMovies } from "../../components/Services/API"
+
 export const Home = () => {
+  
+  const movies = fetchMovies()
     return (
       <main>
-        <h1>Welcome</h1>
-        <img src="https://via.placeholder.com/960x240" alt="" />
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-          laboriosam placeat incidunt rem illum animi nemo quibusdam quia
-          voluptatum voluptate.
-        </p>
+        <MoviesList movies={movies}/>
       </main>
     );
   };
+
+  // export const Home = () => {
+  //   return (
+  //     <main>
+  //       <h1>Welcome</h1>
+  //       <img src="https://via.placeholder.com/960x240" alt="" />
+  //       <p>
+  //         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+  //         laboriosam placeat incidunt rem illum animi nemo quibusdam quia
+  //         voluptatum voluptate.
+  //       </p>
+  //     </main>
+  //   );
+  // };
