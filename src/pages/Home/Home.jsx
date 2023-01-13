@@ -1,27 +1,31 @@
-
-import { MoviesList } from "components/MoviesList/MoviesList";
-import { fetchMovies } from "../../components/Services/API"
+import { useEffect, useState } from 'react';
+import { TrendingList } from "components/TrendingList/TrendingList";
+import { getTrendingMovies } from "../../components/Services/API"
+import { Container, Title} from '../Home/Home.styled';
 
 export const Home = () => {
+  const [trendingMovies, setTrendingMovies] = useState([]);
+
+  useEffect(() => {
+    const renderTrendingMovies = async () => {
+        try {
+            const trendingMovies = await getTrendingMovies();
+            setTrendingMovies(trendingMovies);
+        } catch (error) {
+            console.log(error)
+        }
+    };
+    renderTrendingMovies();
+},[]);
   
-  const movies = fetchMovies()
+  
     return (
       <main>
-        <MoviesList movies={movies}/>
+        <Container>
+          <Title>Trending today</Title>
+        <TrendingList movies={trendingMovies}/>
+        </Container>
+        
       </main>
     );
   };
-
-  // export const Home = () => {
-  //   return (
-  //     <main>
-  //       <h1>Welcome</h1>
-  //       <img src="https://via.placeholder.com/960x240" alt="" />
-  //       <p>
-  //         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-  //         laboriosam placeat incidunt rem illum animi nemo quibusdam quia
-  //         voluptatum voluptate.
-  //       </p>
-  //     </main>
-  //   );
-  // };
