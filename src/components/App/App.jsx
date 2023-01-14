@@ -26,7 +26,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="*" element={<NotFound />} />
-        {/* <Route path="/movies/:id" element={<MoviesDetails />} /> */}
+        <Route path="/movies/:movieId" element={<MoviesDetails />} />
       </Routes>
     </Container>
   

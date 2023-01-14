@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 
 export const MoviesDetails = () => {
-    const { id} = useParams();
+    const { movieId } = useParams();
     return <div>
-        Зараз показує фільм з id - {id}
+        Зараз показує фільм з id - {movieId}
     </div>
 };
