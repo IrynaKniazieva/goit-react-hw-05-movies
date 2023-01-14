@@ -1,4 +1,4 @@
-import { Header, Link, Container} from 'components/App/App.styled';
+import { Header, Link, Container } from './Layout.stuled';
 import {  Outlet } from 'react-router-dom';
 
 export const Layout = () => {
@@ -6,13 +6,12 @@ export const Layout = () => {
       <Container>
         <Header>
           <nav>
-            <Link to="/" end>
-              Home
-            </Link>
-            <Link to="/movies">Movies</Link>
+            <Link to="/">Home</Link>
+            <Link to="movies">Movies</Link>
           </nav>
-          <Outlet />
+          
         </Header>
+        <Outlet />
       </Container>
     );
 }
