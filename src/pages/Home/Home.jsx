@@ -1,27 +1,30 @@
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getTrendingMovies } from 'Services/API';
+// import { TrendingList } from 'components/TrendingList/TrendingList';
 // import { TrendingList } from "components/TrendingList/TrendingList";
-// import { getTrendingMovies } from "../../components/Services/API"
-// import { Container, Title} from '../Home/Home.styled';
+
+// import { Container, Title} from './Home.styled';
 
 export const Home = () => {
-//   const [trendingMovies, setTrendingMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-//   useEffect(() => {
-//     const renderTrendingMovies = async () => {
-//         try {
-//             const trendingMovies = await getTrendingMovies();
-//             setTrendingMovies(trendingMovies);
-//         } catch (error) {
-//             console.log(error)
-//         }
-//     };
-//     renderTrendingMovies();
-// },[]);
-  
-  
-    return (
-      <main>
-       <h1>Trending today</h1>
-      </main>
-    );
-  };
+  useEffect(() => {
+    const renderTrendingMovies = async () => {
+      try {
+        const trendingMovies = await getTrendingMovies();
+        setMovies(trendingMovies);
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    renderTrendingMovies()
+  }, []);
+  return (
+    <ul>
+      {movies.map(movie => (
+        <li key={movie.id}>{movie.name}</li>
+      ))}
+    </ul>
+  )
+}
+
