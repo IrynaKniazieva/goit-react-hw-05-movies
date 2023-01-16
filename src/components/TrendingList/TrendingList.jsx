@@ -6,7 +6,7 @@ export const TrendingList = ({ movies }) => {
 
   return (
     <Container>  
-      {movies.map((original_title, id) => (
+      {movies.map(({original_title, id}) => (
         <ItemMovie key={id}>
           <LinkMovie to={`/movies/${id}`} state={{ from: location }}>
           {original_title}

@@ -1,9 +1,8 @@
+
 import { useEffect, useState } from 'react';
 import { getTrendingMovies } from 'Services/API';
-// import { TrendingList } from 'components/TrendingList/TrendingList';
-// import { TrendingList } from "components/TrendingList/TrendingList";
-
-// import { Container, Title} from './Home.styled';
+import { TrendingList } from 'components/TrendingList/TrendingList';
+import { Container } from './Home.styled';
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -19,12 +18,12 @@ export const Home = () => {
     };
     renderTrendingMovies()
   }, []);
+
   return (
-    <ul>
-      {movies.map(movie => (
-        <li key={movie.id}>{movie.name}</li>
-      ))}
-    </ul>
+    <Container>
+      <h1>Trending Today</h1>
+      <TrendingList movies = {movies} />
+    </Container>
   )
 }
 
