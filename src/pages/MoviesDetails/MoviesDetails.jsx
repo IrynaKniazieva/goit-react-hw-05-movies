@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useFetchMovie } from "hooks/useFetchMovie";
 
-export const MoviesDetails = () => {
-    const { movieId } = useParams();
-    return <div>
-        Зараз показує фільм з id - {movieId}
-    </div>
-};
+export const MovieDetails = () => {
+    const movie = useFetchMovie();
+
+    return (
+        <h2>{movie.title}</h2>
+    )
+}
