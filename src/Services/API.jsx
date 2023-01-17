@@ -6,14 +6,14 @@ axios.defaults.params = {
 };
 // первый вариант
 // список самых популярных фильмов на сегодня для создания коллекции на главной странице.
-export const getTrendingMovies = async() => {
-    const response = await axios.get(`/trending/movie/day`);
-    return response.data.results;
-  };
+// export const getTrendingMovies = async() => {
+//     const response = await axios.get(`/trending/movie/day`);
+//     return response.data.results;
+//   };
 
 
 // вариант как в уроке
-// export async function getTrendingMovies() {
-//   const response = await axios.get(`trending/movie/day`);
-//   return response.data;
-// }
+export async function getTrendingMovies() {
+  const response = await axios.get(`trending/movie/day`);
+  return response.data.results;
+}
