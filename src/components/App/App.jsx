@@ -2,7 +2,7 @@ import { Route, Routes, } from "react-router-dom";
 import { Layout } from "components/Layout/Layout";
 import { NotFound } from "pages/NotFound/NotFound";
 import { Home } from "pages/Home/Home";
-import { MovieDetails } from "pages/MoviesDetails/MoviesDetails";
+import { MoviesDetails } from "pages/MoviesDetails/MoviesDetails";
 
 
 
@@ -12,8 +12,8 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />}/>
         <Route path="movies" element={<div>Movies</div>}/>
-        {/* <Route path="movies/:movieId" element={<MovieDetails />}> */}
-        <Route path=":movieId" element={<MovieDetails />}>
+        <Route path=":id" element={<MoviesDetails />}>
+        {/* <Route path=":movieId" element={<MoviesDetails />}> */}
           <Route path="cast" element={<div>Cast</div>}/>
           <Route path="reviews" element={<div>Reviews</div>}/>
         </Route>

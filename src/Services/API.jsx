@@ -21,5 +21,5 @@ export async function getTrendingMovies() {
 
 export async function getMovieId(id) {
   const response = await axios.get(`movie/${id}`)
-  return response.data.results;
+  return response.data;
 }

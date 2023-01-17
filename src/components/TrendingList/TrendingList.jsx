@@ -12,6 +12,7 @@ export const TrendingList = ({ movies }) => {
           {title}
           </LinkMovie>
         </ItemMovie>
+        
       ))}
       <Outlet/>
     </Container>
