@@ -2,6 +2,7 @@ import { Route, Routes, } from "react-router-dom";
 import { Layout } from "components/Layout/Layout";
 import { NotFound } from "pages/NotFound/NotFound";
 import { Home } from "pages/Home/Home";
+import { MovieDetails } from "pages/MoviesDetails/MoviesDetails";
 
 
 
