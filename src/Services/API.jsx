@@ -19,7 +19,7 @@ export async function getTrendingMovies() {
   return response.data.results;
 }
 
-export async function getMovieId(id) {
+export async function getDetails(id) {
   const response = await axios.get(`movie/${id}`)
   return response.data;
 }

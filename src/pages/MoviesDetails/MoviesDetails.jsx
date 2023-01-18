@@ -1,12 +1,35 @@
-import { useFetchMovie } from "hooks/useFetchMovie";
+// import { useFetchMovie } from "hooks/useFetchMovie";
+
+// export const MoviesDetails = () => {
+//     const movie = useFetchMovie();
+
+//     return (
+
+//        <>
+//        {movie && (
+//         <div>
+//             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt=''></img>
+//             <h2>{movie.title}</h2>
+//         </div>
+//        )}
+
+//        </>
+//     )
+// }
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getDetails } from 'Services/API';
 
 export const MoviesDetails = () => {
-    const movie = useFetchMovie();
+  const [details, setDetails] = useState(null);
+  const { id } = useParams();
 
-    
+  useEffect(() => {
+    getDetails(id).then(setDetails);
+  }, [id]);
 
-    return (
-        
+      return (
+
        <>
        {movie && (
         <div>
@@ -14,13 +37,10 @@ export const MoviesDetails = () => {
             <h2>{movie.title}</h2>
         </div>
        )}
-      
+
        </>
-    )
-}
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { getMovieId } from "Services/API";
+  
+};
 
 // export const MoviesDetails = () => {
 //     const [movie, setMovie] = useState(null);
@@ -30,10 +50,6 @@ export const MoviesDetails = () => {
 //     useEffect(() => {
 //         getMovieId(id).then(setMovie);
 //     }, [id]);
-    
-   
-
-
 
 //     return (
 //        <>
@@ -42,10 +58,7 @@ export const MoviesDetails = () => {
 //             <h2>{movie.title}</h2>
 //         </div>
 //        )}
-      
+
 //        </>
 //     )
 // }
-
-
-
