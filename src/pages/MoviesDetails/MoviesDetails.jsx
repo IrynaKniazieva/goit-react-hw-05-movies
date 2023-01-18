@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDetails } from 'Services/API';
+import { Link } from 'react-router-dom';
 
 export const MoviesDetails = () => {
   const [details, setDetails] = useState(null);
@@ -33,7 +34,20 @@ return (
    
     <img src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`} alt={details.title} width="300"></img>
   </div>
+  
 )}
+<div>
+  <ul>
+    <li>
+    <Link to="cast">Cast</Link>
+    </li>
+    <li>
+    <Link to="reviews">Reviews</Link>
+    </li>
+  </ul>
+</div>
+
+
 </>
 )
 

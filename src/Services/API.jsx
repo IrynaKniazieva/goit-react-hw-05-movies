@@ -19,7 +19,15 @@ export async function getTrendingMovies() {
   return response.data.results;
 }
 
+// запрос полной информации о фильме для страницы кинофильма. 
 export async function getDetails(id) {
   const response = await axios.get(`movie/${id}`)
   return response.data;
 }
+
+// запрос информации о актёрском составе для страницы кинофильма.
+export async function getCast(id) {
+  const response = await axios.get(`/movie/${id}/credits`)
+  return response.data.cast;
+}
+

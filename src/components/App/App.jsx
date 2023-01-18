@@ -3,7 +3,7 @@ import { Layout } from "components/Layout/Layout";
 import { NotFound } from "pages/NotFound/NotFound";
 import { Home } from "pages/Home/Home";
 import { MoviesDetails } from "pages/MoviesDetails/MoviesDetails";
-
+import { Cast } from "components/Cast/Cast";
 
 
 export const App = () => {
@@ -14,7 +14,7 @@ export const App = () => {
         <Route path="movies" element={<div>Movies</div>}/>
         <Route path="movies/:id" element={<MoviesDetails />}>
         {/* <Route path=":movieId" element={<MoviesDetails />}> */}
-          <Route path="cast" element={<div>Cast</div>}/>
+          <Route path="cast" element={<Cast />}/>
           <Route path="reviews" element={<div>Reviews</div>}/>
         </Route>
         <Route path="*" element={<NotFound />} />
