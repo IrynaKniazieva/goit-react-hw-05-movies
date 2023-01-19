@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { getDetails } from 'Services/API';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ return (
 {details && (
   <div>
     <button>Go back</button>
-    <h2>{details.title} {date()} </h2>
+    <h2>{details.title} ({date()})</h2>
     <p>User Score: {userScore()}%</p>
     <h3>Overview</h3>
     <p>{details.overview}</p>
@@ -45,6 +45,7 @@ return (
     <Link to="reviews">Reviews</Link>
     </li>
   </ul>
+  <Outlet />
 </div>
 
 

@@ -9,6 +9,7 @@ export const Cast = () => {
     useEffect(() => {
         getCast(id).then(setCast);
     }, [id]);
+    console.log(cast);
     if (cast.length === 0) {
         return "We don't have any cast information on this movie.";}
 
