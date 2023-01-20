@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+// import { useLocation } from 'react-router-dom';
 import { getTrendingMovies } from 'Services/API';
 import { TrendingList } from 'components/TrendingList/TrendingList';
 import { Container } from './Home.styled';
@@ -7,6 +8,7 @@ import { Container } from './Home.styled';
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
+  // const location = useLocation();
 
   useEffect(() => {
     const renderTrendingMovies = async () => {

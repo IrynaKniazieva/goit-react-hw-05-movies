@@ -1,12 +1,15 @@
 
 import { useEffect, useState } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { getDetails } from 'Services/API';
 import { Link } from 'react-router-dom';
 
 export const MoviesDetails = () => {
   const [details, setDetails] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     getDetails(id).then(setDetails);
@@ -20,11 +23,12 @@ const genres = () => details.genres.map(genre => genre.name).join(', ');
 
 
 
+
 return (
 <>
 {details && (
   <div>
-    <button>Go back</button>
+    <button onClick={() => navigate(location?.state?.from ?? '/')} type='button'>Go back</button>
     <h2>{details.title} ({date()})</h2>
     <p>User Score: {userScore()}%</p>
     <h3>Overview</h3>
