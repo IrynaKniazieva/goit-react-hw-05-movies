@@ -37,3 +37,9 @@ export async function getReviews(id) {
   return response.data.results;
 }
 
+// поиск кинофильма по ключевому слову на странице фильмов.
+export async function getSearch(query) {
+  // const response = await axios.get(`/movie/search`)
+  const response = await axios.get(`/search/movie?query=${query}`)
+return response.data.results; 
+}
