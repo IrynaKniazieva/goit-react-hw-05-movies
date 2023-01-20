@@ -31,3 +31,9 @@ export async function getCast(id) {
   return response.data.cast;
 }
 
+// запрос обзоров для страницы кинофильма.
+export async function getReviews(id) {
+  const response = await axios.get(`/movie/${id}/reviews`)
+  return response.data.results;
+}
+

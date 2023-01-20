@@ -29,7 +29,7 @@ return (
     <p>User Score: {userScore()}%</p>
     <h3>Overview</h3>
     <p>{details.overview}</p>
-    <h3>Genres</h3>
+    <h3>Movie Genres:</h3>
     <p>{genres()}</p>
    
     <img src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`} alt={details.title} width="300"></img>
