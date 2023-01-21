@@ -32,10 +32,18 @@
 
 // }
 
-export const SearchMovie = ({onChange}) => {
+export const SearchMovie = ({ onSubmit }) => {
     return (
         <div>
-            <input type="text" onChange={e => onChange(e.target.value)}></input>
+            <form onSubmit={onSubmit}>
+            <input 
+            name="query"
+            type="text" 
+            // value={value}
+            // onChange={e => onChange(e.target.value)}
+            ></input>
+            <button>Search</button>
+            </form>
         </div>
     )
 }
