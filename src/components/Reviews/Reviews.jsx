@@ -11,7 +11,7 @@ export const Reviews = () => {
     }, [id]);
 
     if (reviews.length ===0) {
-        return "We don't have any cast information on this movie."
+        return "We don't have any reviews for this movie."
     }
 
     return (

@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Container, ItemMovie, LinkMovie } from "./TrendingList.styled";
+import { Container, ItemMovie, LinkMovie } from "./MoviesList.styled";
 
-export const TrendingList = ({ movies }) => {
+export const MoviesList = ({ movies }) => {
  const location = useLocation();
 
   return (
@@ -19,5 +19,3 @@ export const TrendingList = ({ movies }) => {
     </Container>
   );
 };
-
-

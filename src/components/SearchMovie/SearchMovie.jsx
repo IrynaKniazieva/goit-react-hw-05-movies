@@ -42,7 +42,7 @@ export const SearchMovie = ({ onSubmit }) => {
             // value={value}
             // onChange={e => onChange(e.target.value)}
             ></input>
-            <button>Search</button>
+            <button type="submit">Search</button>
             </form>
         </div>
     )
