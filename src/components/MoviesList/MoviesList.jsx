@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Container, ItemMovie, LinkMovie } from "./MoviesList.styled";
+import { Container, ItemMovie, LinkMovie, ImgMovie, TitlleMovie } from "./MoviesList.styled";
 
 export const MoviesList = ({ movies }) => {
  const location = useLocation();
@@ -8,9 +8,11 @@ export const MoviesList = ({ movies }) => {
     <Container>  
       {movies.map(({title, id, poster_path}) => (
         <ItemMovie key={id}>
-          <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} width="100"></img>
+
           <LinkMovie to={`/movies/${id}`} state={{ from: location }}>
-          {title}
+          <ImgMovie src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt={title} width="200"/>
+          <TitlleMovie>{title}</TitlleMovie>
+          
           </LinkMovie>
         </ItemMovie>
         
