@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCast } from 'Services/API';
+import { Container, Item } from './Cast.styled';
 
 export const Cast = () => {
     const [cast, setCast] = useState([]);
@@ -15,17 +16,19 @@ export const Cast = () => {
 
         return (
             <>
-            <ul>
-                {cast.map(({ profile_path, name, character, id }) => {
+            <Container>
+            {cast.map(({ profile_path, name, character, id }) => {
                 return (
-                    <li key={id}>
+                    <Item key={id}>
                         <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`} alt={name}></img>
                         <p>{name}</p>
                         <p>Character: {character}</p>
-                    </li>
+                    </Item>
+                    
                 )
 })}
-            </ul>
+            </Container>
+            
             </>
         )
 }

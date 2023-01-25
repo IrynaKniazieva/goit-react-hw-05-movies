@@ -36,6 +36,7 @@ text-decoration: none;
 color: black;
 :hover {
    color: orangered;
+   font-size: 20px;
 }
 `;
 
