@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { getSearch } from "Services/API"
-// import { Link } from "react-router-dom";
 import { MoviesList } from "components/MoviesList/MoviesList";
 
 export const Movies = () => {
@@ -31,10 +30,6 @@ export const Movies = () => {
       <main>
         <SearchMovie  onSubmit={onFormSubmit}/>
         {movies && <MoviesList movies={movies}/>}
-        
-        {/* {movies || movies.length !== 0 ? (
-          <MoviesList movies={movies}/>
-        ) : (<div>Not Found</div>)} */}
       </main>
     );
   };
