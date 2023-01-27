@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useParams, useNavigate, useLocation } from 'react-router-dom';
 import { getDetails } from 'Services/API';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ import {
   TitlleDetails,
 } from './MoviesDetails.styled.';
 
-export const MoviesDetails = () => {
+const MoviesDetails = () => {
   const [details, setDetails] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -72,9 +72,14 @@ export const MoviesDetails = () => {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
+        <Suspense fallback={<div>Loading ...</div>}>
         <Outlet />
+        </Suspense>
+        
 
       </ContainerAdditionalInfo>
     </>
   );
 };
+
+export default MoviesDetails;

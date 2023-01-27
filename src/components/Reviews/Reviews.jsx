@@ -4,7 +4,7 @@ import { getReviews } from 'Services/API';
 import { Container } from './Reviews.styled';
 import { ReviewsList } from 'components/ReviewsList/RevievsList';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const { id } = useParams();
 
@@ -21,21 +21,7 @@ export const Reviews = () => {
       )}
     </Container>
   );
-  // return (
-  //     <>
-  //     <Container>
-
-  //     {reviews.map(({author, content, id}) => {
-  //         return (
-  //             <li key={id}>
-  //                 <h3>Author: {author}</h3>
-  //                 <p>{content}</p>
-  //             </li>
-
-  //         )
-  //     })}
-  //     </Container>
-
-  //     </>
-  // )
 };
+
+
+export default Reviews;

@@ -4,25 +4,24 @@ import { useParams } from 'react-router-dom';
 import { getCast } from 'Services/API';
 import { Container } from './Cast.styled';
 
-export const Cast = () => {
-    const [cast, setCast] = useState([]);
-    const {id} = useParams();
+const Cast = () => {
+  const [cast, setCast] = useState([]);
+  const { id } = useParams();
 
-    useEffect(() => {
-        getCast(id).then(setCast);
-    }, [id]);
-    
+  useEffect(() => {
+    getCast(id).then(setCast);
+  }, [id]);
 
-        return (
-        
-            <Container>
-                {cast.length !== 0 ? (
-                    <CastList cast ={cast}/>
-                ) : (
-                <p>We don't have any cast information on this movie.</p>)}
+  return (
+    <Container>
+      {cast.length !== 0 ? (
+        <CastList cast={cast} />
+      ) : (
+        <p>We don't have any cast information on this movie.</p>
+      )}
+    </Container>
+  );
+};
 
-            </Container>
-            
-            
-        )
-}
+
+export default Cast;

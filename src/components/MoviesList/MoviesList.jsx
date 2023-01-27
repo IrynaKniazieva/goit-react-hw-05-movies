@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Container, ItemMovie, LinkMovie, ImgMovie, TitlleMovie } from "./MoviesList.styled";
 
@@ -17,7 +18,10 @@ export const MoviesList = ({ movies }) => {
         </ItemMovie>
         
       ))}
+      <Suspense fallback={<div>Loading...</div>}>
       <Outlet/>
+      </Suspense>
+      
     </Container>
   );
 };

@@ -1,15 +1,10 @@
-
 import { useEffect, useState } from 'react';
-// import { useLocation } from 'react-router-dom';
 import { getTrendingMovies } from 'Services/API';
-// import { TrendingList } from 'components/TrendingList/TrendingList';
 import { Container, Titlle } from './Home.styled';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
-
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
-  // const location = useLocation();
 
   useEffect(() => {
     const renderTrendingMovies = async () => {
@@ -17,17 +12,18 @@ export const Home = () => {
         const trendingMovies = await getTrendingMovies();
         setMovies(trendingMovies);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
     };
-    renderTrendingMovies()
+    renderTrendingMovies();
   }, []);
 
   return (
     <Container>
       <Titlle>Trending Today</Titlle>
-      <MoviesList movies = {movies} />
+      <MoviesList movies={movies} />
     </Container>
-  )
-}
+  );
+};
 
+export default Home;

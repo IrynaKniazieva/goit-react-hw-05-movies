@@ -1,7 +1,5 @@
-import styled from "styled-components";
-
-
+import styled from 'styled-components';
 
 export const Item = styled.li`
-padding: 15px 0;
+  padding: 15px 0;
 `;
