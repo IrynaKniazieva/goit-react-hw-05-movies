@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getCast } from 'Services/API';
 import { Container } from './Cast.styled';
 
+
 const Cast = () => {
   const [cast, setCast] = useState([]);
   const { id } = useParams();
@@ -11,6 +12,8 @@ const Cast = () => {
   useEffect(() => {
     getCast(id).then(setCast);
   }, [id]);
+
+  console.log(cast);
 
   return (
     <Container>

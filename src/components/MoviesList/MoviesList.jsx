@@ -7,6 +7,7 @@ import {
   ImgMovie,
   TitlleMovie,
 } from './MoviesList.styled';
+import NotFoto from '../Image/NotFoto.jpg';
 import PropTypes from 'prop-types';
 
 export const MoviesList = ({ movies }) => {
@@ -18,7 +19,11 @@ export const MoviesList = ({ movies }) => {
         <ItemMovie key={id}>
           <LinkMovie to={`/movies/${id}`} state={{ from: location }}>
             <ImgMovie
-              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w200/${poster_path}`
+                  : NotFoto
+              }
               alt={title}
               width="200"
             />
@@ -37,7 +42,7 @@ MoviesList.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      poster_path: PropTypes.string.isRequired,
+      poster_path: PropTypes.string,
       title: PropTypes.string.isRequired,
     })
   ),
