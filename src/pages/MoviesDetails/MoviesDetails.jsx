@@ -1,9 +1,9 @@
 import { Suspense, useEffect, useState } from 'react';
-import { Outlet, useParams, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useParams, useLocation } from 'react-router-dom';
 import { getDetails } from 'Services/API';
 import { Link } from 'react-router-dom';
 import {
-  Button,
+  
   Container,
   ContainerAdditionalInfo,
   ContainerInfo,
@@ -17,8 +17,9 @@ import {
 const MoviesDetails = () => {
   const [details, setDetails] = useState(null);
   const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation();
+  const cameBack = location.state?.from ?? '/';
   console.log(location);
 
   useEffect(() => {
@@ -35,13 +36,15 @@ const MoviesDetails = () => {
     <>
       {details && (
         <div>
-          <Button
+          
+          <Link to={cameBack}>&#60; Go back</Link>
+          {/* <Button
             onClick={() => navigate(location?.state?.from ?? '/')}
             type="button"
           >
             {' '}
             &#60; Go back
-          </Button>
+          </Button> */}
           <Container>
             <ImgMovie
               src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
@@ -66,10 +69,10 @@ const MoviesDetails = () => {
 
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state={{ from: cameBack }}>Cast</Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state={{ from: cameBack }}>Reviews</Link>
           </li>
         </ul>
         <Suspense fallback={<div>Loading ...</div>}>
